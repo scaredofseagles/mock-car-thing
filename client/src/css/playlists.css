@@ -1,0 +1,5 @@
+.playlist {
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding-bottom: 2%;
+}

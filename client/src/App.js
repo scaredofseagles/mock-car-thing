@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import TrackView from "./components/Tracks/TrackView";
+import PrivateRoute from "./services/PrivateRoute";
+import Nav from "./components/General/Nav";
+import ControlsBar from "./components/General/ControlsBar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    return (
+        <ChakraProvider>
+          <Router>
+            <Nav />
+            <Switch>
+              <PrivateRoute  path="/home" component={Home}/>
+              <PrivateRoute  path="/tracks" component={TrackView}/>
+              <Route  path="/" component={Login}/>
+            </Switch>
+            <ControlsBar />
+          </Router>
+        </ChakraProvider>
+    )
 }
 
 export default App;
