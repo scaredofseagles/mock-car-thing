@@ -6,6 +6,7 @@ import TrackView from "./components/Tracks/TrackView";
 import PrivateRoute from "./services/PrivateRoute";
 import Nav from "./components/General/Nav";
 import ControlsBar from "./components/General/ControlsBar";
+import Callback from "./components/Login/Callback";
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
               <PrivateRoute  path="/home" component={Home}/>
               <PrivateRoute  path="/tracks" component={TrackView}/>
               <Route  path="/" component={Login}/>
+              <Route  path="/callback" component={Callback}/>
             </Switch>
             <ControlsBar />
           </Router>

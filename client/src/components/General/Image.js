@@ -16,7 +16,7 @@ const Image = (props) => {
       <VStack>
         <Img boxSize="200px" src={props.src} alt="Dan Abramov" />
 
-      <Heading size="md">{props.name}</Heading>
+      <Heading size="md" style={{ maxWidth: "100%"}} isTruncated>{props.name}</Heading>
       <Text>{props.desc ? props.desc : ""}</Text>
       </VStack>
 
